@@ -1,0 +1,27 @@
+.section {
+  margin-top: 15px;
+  padding: 40px;
+}
+.section__title {
+  font-size: 16px;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.section__subtitle {
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  line-height: 1.8;
+  font-family: "playfair display";
+}
+.copyright {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 10px;
+  line-height: 2;
+}
