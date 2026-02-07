@@ -18,10 +18,10 @@
   color: #000;
 }
 .edu__box > h3 {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.8);
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .edu__box > h2,
