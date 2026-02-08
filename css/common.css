@@ -25,3 +25,7 @@
   font-size: 10px;
   line-height: 2;
 }
+#error {
+  color: red;
+  font-family: avenir;
+}

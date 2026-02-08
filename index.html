@@ -437,7 +437,12 @@
             <h2><a href="tel:+9779749225880">+977 9749225880</a></h2>
           </div>
         </div>
-        <form class="contact__form relative" id="portfolio-contact-form">
+        <form
+          action="#"
+          class="contact__form relative"
+          id="portfolio-contact-form"
+          onsubmit="handleSubmit(event)"
+        >
           <div class="relative">
             <input
               class="contact__input"
@@ -481,8 +486,9 @@
             value="Portfolio"
           /> -->
           <div>
-            <button class="contact__button" type="submit">Send Message</button>
+            <input type="submit" class="contact__button" />
           </div>
+          <p id="error"></p>
         </form>
       </div>
     </section>
@@ -525,35 +531,25 @@
       // initialise icon based on current sidebar state
       setHamburgerState(sidebar.classList.contains("open"));
     </script>
+
     <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const error = document.getElementById("error");
+        error.textContent = "";
+        const form = document.getElementById("portfolio-contact-form");
+        const formData = new FormData(form);
+        const subject = formData.get("subject");
+        const message = formData.get("message");
+        if (!subject || !message) {
+          return (error.textContent = "All fields are required!");
+        }
+      }
       const form = document.getElementById("portfolio-contact-form");
 
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
-
-        // validate message field
-        const messageEl = document.getElementById("message");
-        const existingError =
-          messageEl.parentElement.querySelector(".error-text");
-        if (messageEl.value.trim() === "") {
-          messageEl.classList.add("input-error");
-          if (!existingError) {
-            const err = document.createElement("span");
-            err.className = "error-text";
-            err.textContent = "Message is required.";
-            messageEl.parentElement.appendChild(err);
-          } else {
-            existingError.textContent = "Message is required.";
-          }
-          messageEl.focus();
-          return;
-        } else {
-          messageEl.classList.remove("input-error");
-          if (existingError) existingError.remove();
-        }
-
         const formData = new FormData(form);
-
         try {
           const response = await fetch("https://formspree.io/f/mkoooynq", {
             method: "POST",
