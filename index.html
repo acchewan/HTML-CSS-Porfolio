@@ -443,9 +443,8 @@
               class="contact__input"
               type="text"
               id="name"
-              placeholder="Name"
               name="name"
-              value=""
+              placeholder="Name"
             />
           </div>
           <div class="relative">
@@ -453,9 +452,8 @@
               class="contact__input"
               type="email"
               id="email"
-              placeholder="Email"
               name="email"
-              value=""
+              placeholder="Email"
             />
           </div>
           <div class="relative">
@@ -463,27 +461,25 @@
               class="contact__input"
               type="text"
               id="subject"
-              placeholder="Subject"
               name="subject"
-              value=""
+              placeholder="Subject"
             />
           </div>
           <div class="relative">
             <textarea
+              class="contact__textarea"
               name="message"
               id="message"
-              class="contact__textarea"
-              placeholder="Message"
-              rows="4"
+              placeholder="Message.."
             ></textarea>
           </div>
-          <input
+          <!-- <input
             style="display: none"
             type="text"
             id="source"
             name="source"
             value="Portfolio"
-          />
+          /> -->
           <div>
             <button class="contact__button" type="submit">Send Message</button>
           </div>
@@ -587,9 +583,6 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
         toTop.addEventListener("click", scrollToTop);
-        toTop.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") scrollToTop();
-        });
       }
     </script>
   </body>
